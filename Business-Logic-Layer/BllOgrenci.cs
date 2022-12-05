@@ -28,5 +28,14 @@ namespace Business_Logic_Layer
             return DalOgrenci.OgrenciListesi();
             //Data Access Layer'daki OğrenciListesini geri döndüren bir liste fonksiyonu tanımladık.
         }
+
+        public static bool ogrenciSilBLL(int p)
+        {
+            if (p != null)
+            {
+                return DalOgrenci.ogrenciSil(p);
+            }
+            return false;
+        }
     }
 }

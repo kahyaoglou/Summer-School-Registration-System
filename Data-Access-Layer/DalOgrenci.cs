@@ -22,7 +22,7 @@ namespace DataAccessLayer
                 komut1.Connection.Open(); //Bağlantımı aç.
             }
 
-            komut1.Parameters.AddWithValue("@p1", ekle.Ad);
+            komut1.Parameters.AddWithValue("@p1", ekle.Ad); //Entity'deki değişkenlere bu değerleri ata.
             komut1.Parameters.AddWithValue("@p2", ekle.Soyad);
             komut1.Parameters.AddWithValue("@p3", ekle.Numara);
             komut1.Parameters.AddWithValue("@p4", ekle.Fotograf);
@@ -58,6 +58,18 @@ namespace DataAccessLayer
             }
             dr.Close();
             return degerler;
+        }
+
+        public static bool ogrenciSil(int sil) 
+        {
+            SqlCommand komut3 = new SqlCommand("delete FROM tbl_Ogrenci WHERE ogrID=@P1", Baglanti.baglanti);
+            if (komut3.Connection.State != ConnectionState.Open) //Connection state üzerinden bağlantı kurulmamışsa;
+            {
+                komut3.Connection.Open(); //Bağlantımı aç.
+            }
+            komut3.Parameters.AddWithValue("@p1", sil); //Presentationdan gelen değer (sil) p1'e atanır.
+            //komut3'ten gelen komuttaki p1 artık (sil) olur.
+            return komut3.ExecuteNonQuery() > 0; //Değer silme işlemi yapılır. Geri döndürülür.
         }
 
     }

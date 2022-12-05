@@ -64,11 +64,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="OgrenciSil.aspx" />
     <Content Include="YeniKayit.aspx" />
     <Content Include="OgrenciListesi.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OgrenciSil.aspx.cs">
+      <DependentUpon>OgrenciSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OgrenciSil.aspx.designer.cs">
+      <DependentUpon>OgrenciSil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="YeniKayit.aspx.cs">
       <DependentUpon>YeniKayit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
