@@ -64,17 +64,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AnaSayfa.aspx" />
+    <Content Include="YeniKayit.aspx" />
     <Content Include="OgrenciListesi.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnaSayfa.aspx.cs">
-      <DependentUpon>AnaSayfa.aspx</DependentUpon>
+    <Compile Include="YeniKayit.aspx.cs">
+      <DependentUpon>YeniKayit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AnaSayfa.aspx.designer.cs">
-      <DependentUpon>AnaSayfa.aspx</DependentUpon>
+    <Compile Include="YeniKayit.aspx.designer.cs">
+      <DependentUpon>YeniKayit.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>

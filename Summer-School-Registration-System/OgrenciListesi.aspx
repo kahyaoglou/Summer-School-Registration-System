@@ -12,6 +12,8 @@
             <th>Öğrenci Numara</th>
             <th>Öğrenci Şifre</th>
             <th>Öğrenci Fotoğraf</th>
+            <th>Bakiye</th>
+            <th>İşlemler</th>
         </tr>
         <tbody>
             <!--Verilerimizi listelemek için kullanacağımız araç.-->
@@ -26,6 +28,12 @@
                         <td><%# Eval("fotograf") %></td>
                         <td><%# Eval("sifre") %></td>
                         <td><%# Eval("bakiye") %></td>
+                        <td>
+                            <asp:HyperLink ID="HyperLink1" CssClass="btn btn-danger" runat="server">Sil</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink2" CssClass="btn btn-success" runat ="server">Güncelle</asp:HyperLink>
+                            <!--Hyper link ile aslında text bir link koymuş oluruz.-->
+                            <!--Cssclass btn ile bunun bir buton olduğunu belirliyoruz.-->
+                        </td>
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>
