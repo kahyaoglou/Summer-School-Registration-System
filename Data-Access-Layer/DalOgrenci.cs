@@ -60,7 +60,7 @@ namespace DataAccessLayer
             return degerler;
         }
 
-        public static bool ogrenciSil(int sil) 
+        public static bool ogrenciSil(int sil)
         {
             SqlCommand komut3 = new SqlCommand("delete FROM tbl_Ogrenci WHERE ogrID=@P1", Baglanti.baglanti);
             if (komut3.Connection.State != ConnectionState.Open) //Connection state üzerinden bağlantı kurulmamışsa;
@@ -99,6 +99,25 @@ namespace DataAccessLayer
             }
             dr.Close();
             return degerler;
+        }
+
+        public static bool ogrenciGuncelleDAL(EntityOgrenci deger)
+        {
+            SqlCommand komut5 = new SqlCommand("UPDATE tbl_Ogrenci SET ogrAd=@p1, ogrSoyad=@p2, ogrNumara=@p3, ogrFoto=@p4, ogrSifre=@p5 WHERE ogrID=@p6", Baglanti.baglanti);
+
+            if (komut5.Connection.State != ConnectionState.Open) //Connection state üzerinden bağlantı kurulmamışsa;
+            {
+                komut5.Connection.Open(); //Bağlantımı aç.
+            }
+
+            komut5.Parameters.AddWithValue("@p1", deger.Ad);
+            komut5.Parameters.AddWithValue("@p2", deger.Soyad);
+            komut5.Parameters.AddWithValue("@p3", deger.Numara);
+            komut5.Parameters.AddWithValue("@p4", deger.Fotograf);
+            komut5.Parameters.AddWithValue("@p5", deger.Sifre);
+            komut5.Parameters.AddWithValue("@p6", deger.Id);
+
+            return komut5.ExecuteNonQuery() > 0; //komut5'in sıfırdan büyük değerini döndür.
         }
 
     }

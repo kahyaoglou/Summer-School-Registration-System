@@ -40,7 +40,7 @@
                 <asp:TextBox ID="txtFotograf" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
         </div>
-        <asp:Button ID="Button1" runat="server" Text="Güncelle" CssClass="btn btn-warning"/>
+        <asp:Button ID="Button1" runat="server" Text="Güncelle" CssClass="btn btn-warning" OnClick="Button1_Click"/>
     </form>
 </asp:Content>
 

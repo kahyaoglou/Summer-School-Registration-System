@@ -31,7 +31,7 @@ namespace Business_Logic_Layer
 
         public static bool ogrenciSilBLL(int p)
         {
-            if (p != null)
+            if (p >= 0)
             {
                 return DalOgrenci.ogrenciSil(p);
             }
@@ -42,6 +42,15 @@ namespace Business_Logic_Layer
         {
             return DalOgrenci.ogrenciDetayDAL(p);
             //Data Access Layer'daki OğrenciListesini geri döndüren bir liste fonksiyonu tanımladık.
+        }
+
+        public static bool ogrenciGuncelleBLL(EntityOgrenci p)
+        {
+            if (p.Ad != null && p.Soyad != null && p.Numara != null & p.Sifre != null && p.Fotograf != null && p.Id > 0)
+            {
+                return DalOgrenci.ogrenciGuncelleDAL(p);
+            }
+            return false;
         }
     }
 }

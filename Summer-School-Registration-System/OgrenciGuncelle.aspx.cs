@@ -20,13 +20,24 @@ namespace Summer_School_Registration_System
             txtID.Enabled = false;
 
             //TextBoxların içerisine hazır gelmesi için bu yapıyı kullanıyoruz.
-            EntityOgrenci ent = new EntityOgrenci(); //Buradaki propertylere değer atayacağız.
             List<EntityOgrenci> OgrList = BllOgrenci.ogrenciDetayBLL(x);
             txtAd.Text = OgrList[0].Ad.ToString();
             txtSoyad.Text = OgrList[0].Soyad.ToString();
             txtNumara.Text = OgrList[0].Numara.ToString();
             txtFotograf.Text = OgrList[0].Fotograf.ToString();
             txtSifre.Text = OgrList[0].Sifre.ToString();
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            EntityOgrenci ent = new EntityOgrenci();
+            ent.Ad = txtAd.Text;
+            ent.Soyad = txtSoyad.Text;
+            ent.Sifre = txtSifre.Text;
+            ent.Numara = txtNumara.Text;
+            ent.Fotograf = txtFotograf.Text;
+            ent.Id = txtID.Text;
 
         }
     }
