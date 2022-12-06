@@ -27,6 +27,7 @@ namespace Summer_School_Registration_System
             ent.Fotograf = txtFotograf.Text;
 
             BllOgrenci.ogrenciEkleBLL(ent); //Yukarıdan gelen değerleri ekle.
+            
         }
     }
 }

@@ -30,7 +30,7 @@
                         <td><%# Eval("bakiye") %></td>
                         <td>
                             <asp:HyperLink ID="HyperLink1" NavigateUrl='<%#"~/OgrenciSil.aspx?id=" + Eval("id") %>' CssClass="btn btn-danger" runat="server">Sil</asp:HyperLink>
-                            <asp:HyperLink ID="HyperLink2" CssClass="btn btn-success" runat ="server">Güncelle</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink2" NavigateUrl='<%#"~/OgrenciGuncelle.aspx?id=" + Eval("id") %>' CssClass="btn btn-success" runat ="server">Güncelle</asp:HyperLink>
                             <!--Hyper link ile aslında text bir link koymuş oluruz.-->
                             <!--Cssclass btn ile bunun bir buton olduğunu belirliyoruz.-->
                             <!--Navigate bar bize yönlendirme sunar.-->
