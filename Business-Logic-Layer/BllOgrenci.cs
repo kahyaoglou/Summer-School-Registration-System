@@ -46,7 +46,7 @@ namespace Business_Logic_Layer
 
         public static bool ogrenciGuncelleBLL(EntityOgrenci p)
         {
-            if (p.Ad != null && p.Soyad != null && p.Numara != null & p.Sifre != null && p.Fotograf != null && p.Id > 0)
+            if (p.Ad != null && p.Ad != " " && p.Ad != "" && p.Soyad != null && p.Numara != null & p.Sifre != null && p.Fotograf != null && p.Id > 0)
             {
                 return DalOgrenci.ogrenciGuncelleDAL(p);
             }

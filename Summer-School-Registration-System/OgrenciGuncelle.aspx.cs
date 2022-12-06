@@ -19,13 +19,20 @@ namespace Summer_School_Registration_System
             txtID.Text = x.ToString();
             txtID.Enabled = false;
 
-            //TextBoxların içerisine hazır gelmesi için bu yapıyı kullanıyoruz.
-            List<EntityOgrenci> OgrList = BllOgrenci.ogrenciDetayBLL(x);
-            txtAd.Text = OgrList[0].Ad.ToString();
-            txtSoyad.Text = OgrList[0].Soyad.ToString();
-            txtNumara.Text = OgrList[0].Numara.ToString();
-            txtFotograf.Text = OgrList[0].Fotograf.ToString();
-            txtSifre.Text = OgrList[0].Sifre.ToString();
+            if(Page.IsPostBack == false)
+                //Sayfa ilk yüklendiğinde hafızaya almış olduğumuz verileri koruması için ispostback kullandık.
+                //Yani bir güncelleme yaptığımızda arkaplanda olabilmesi için yaptık diyebiliriz.
+            {
+                //TextBoxların içerisine hazır gelmesi için bu yapıyı kullanıyoruz.
+                List<EntityOgrenci> OgrList = BllOgrenci.ogrenciDetayBLL(x);
+                txtAd.Text = OgrList[0].Ad.ToString();
+                txtSoyad.Text = OgrList[0].Soyad.ToString();
+                txtNumara.Text = OgrList[0].Numara.ToString();
+                txtFotograf.Text = OgrList[0].Fotograf.ToString();
+                txtSifre.Text = OgrList[0].Sifre.ToString();
+            }
+
+           
 
         }
 
@@ -37,7 +44,10 @@ namespace Summer_School_Registration_System
             ent.Sifre = txtSifre.Text;
             ent.Numara = txtNumara.Text;
             ent.Fotograf = txtFotograf.Text;
-            ent.Id = txtID.Text;
+            ent.Id = Convert.ToInt32(txtID.Text);
+
+            BllOgrenci.ogrenciGuncelleBLL(ent);
+            Response.Redirect("OgrenciListesi.Aspx");
 
         }
     }

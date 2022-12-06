@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Summer-School-Registration-System/Dersler.aspx.designer.cs
+/Summer-School-Registration-System/Dersler.aspx.cs
+/Summer-School-Registration-System/Dersler.aspx

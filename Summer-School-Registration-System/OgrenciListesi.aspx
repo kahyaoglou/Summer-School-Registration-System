@@ -10,8 +10,8 @@
             <th>Öğrenci Ad</th>
             <th>Öğrenci Soyad</th>
             <th>Öğrenci Numara</th>
-            <th>Öğrenci Şifre</th>
             <th>Öğrenci Fotoğraf</th>
+            <th>Öğrenci Şifre</th>
             <th>Bakiye</th>
             <th>İşlemler</th>
         </tr>
