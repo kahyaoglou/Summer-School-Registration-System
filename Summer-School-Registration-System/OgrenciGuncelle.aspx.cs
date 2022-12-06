@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EntityLayer;
+using DataAccessLayer;
+using Business_Logic_Layer;
 
 namespace Summer_School_Registration_System
 {
@@ -11,9 +14,20 @@ namespace Summer_School_Registration_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Id'yi textboxa yazdırıp, id değiştirlmeden güncelleme yapılmasını sağlayan yapı.
             int x = Convert.ToInt32(Request.QueryString["id"].ToString());
             txtID.Text = x.ToString();
             txtID.Enabled = false;
+
+            //TextBoxların içerisine hazır gelmesi için bu yapıyı kullanıyoruz.
+            EntityOgrenci ent = new EntityOgrenci(); //Buradaki propertylere değer atayacağız.
+            List<EntityOgrenci> OgrList = BllOgrenci.ogrenciDetayBLL(x);
+            txtAd.Text = OgrList[0].Ad.ToString();
+            txtSoyad.Text = OgrList[0].Soyad.ToString();
+            txtNumara.Text = OgrList[0].Numara.ToString();
+            txtFotograf.Text = OgrList[0].Fotograf.ToString();
+            txtSifre.Text = OgrList[0].Sifre.ToString();
+
         }
     }
 }

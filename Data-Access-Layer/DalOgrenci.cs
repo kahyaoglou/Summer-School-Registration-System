@@ -72,5 +72,34 @@ namespace DataAccessLayer
             return komut3.ExecuteNonQuery() > 0; //Değer silme işlemi yapılır. Geri döndürülür.
         }
 
+        public static List<EntityOgrenci> ogrenciDetayDAL(int id)
+        {
+            //Entity öğrenci clasının içerisindeki değerler neyse, listin o değerleri almasını istiyoruz.
+            List<EntityOgrenci> degerler = new List<EntityOgrenci>();
+            //Entity öğrenci classındaki verileri kullanan listten, degerler adında bir nesne oluşturuyoruz.
+            SqlCommand komut4 = new SqlCommand("SELECT * FROM tbl_Ogrenci where ogrID = @p1", Baglanti.baglanti);
+            //Baglanti data access layer'ı üzerinden baglanti nesnesini kullanarak veritabanına erişimi sağladık.
+            komut4.Parameters.AddWithValue("@p1", id);
+            if (komut4.Connection.State != ConnectionState.Open) //Connection state üzerinden bağlantı kurulmamışsa;
+            {
+                komut4.Connection.Open(); //Bağlantımı aç.
+            }
+            SqlDataReader dr = komut4.ExecuteReader(); //Bağlantımı oku ve dr nesnesine ata
+            while (dr.Read()) //dr nesnesinin içeriğini okudukça...
+            {
+                EntityOgrenci ent = new EntityOgrenci();
+                ent.Ad = dr["ogrAd"].ToString();
+                ent.Soyad = dr["ogrSoyad"].ToString();
+                ent.Numara = dr["ogrNumara"].ToString();
+                ent.Fotograf = dr["ogrFoto"].ToString();
+                ent.Sifre = dr["ogrSifre"].ToString();
+                ent.Bakiye = Convert.ToDouble(dr["ogrBakiye"].ToString());
+
+                degerler.Add(ent);
+            }
+            dr.Close();
+            return degerler;
+        }
+
     }
 }

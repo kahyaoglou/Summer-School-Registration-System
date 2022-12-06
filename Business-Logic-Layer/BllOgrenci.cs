@@ -37,5 +37,11 @@ namespace Business_Logic_Layer
             }
             return false;
         }
+
+        public static List<EntityOgrenci> ogrenciDetayBLL(int p)
+        {
+            return DalOgrenci.ogrenciDetayDAL(p);
+            //Data Access Layer'daki OğrenciListesini geri döndüren bir liste fonksiyonu tanımladık.
+        }
     }
 }
