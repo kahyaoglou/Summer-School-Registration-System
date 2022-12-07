@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    class EntityDers
+    public class EntityDers
     {
         private string dersAd;
         private int min;
