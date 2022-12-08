@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    public class Baglanti
+    public static class Baglanti
         /* Data Access Layer katmanının Baglanti sınıfında, sql kütüphanesi ve baglanti nesnesi
          üzerinden veritabanı bağlantısı yapmaktayız.*/
         /* Bu nesneyi öteki classlarda çağıracağız. O nedenle public tanımlamalıyız.*/
