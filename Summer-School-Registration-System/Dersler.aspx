@@ -15,8 +15,6 @@
             <!--Form control ile drop down sayfayı enlemesine kaplayacaktır.-->
         </div>
         <br />
-
-        <br /> 
         <div>
             <asp:Button ID="Button1" runat="server" Text="Ders Talep Oluştur." CssClass="btn btn-warning" OnClick="Button1_Click" />
         </div>
