@@ -22,7 +22,7 @@
             <div>
                 <asp:Label for="txtSoyad" runat="server" Text="Öğrenci Soyadı:" style="font-weight: bold"></asp:Label>
                 <asp:TextBox ID="txtSoyad" runat="server" CssClass="form-control"></asp:TextBox>
-                <!--Css Class ile css kullanırız. Bunun için de bootstrapin nimetlerinden faydalanırız.-->
+                <!--Css Class ile css kullanırız. Bunun için de bootstrapin nimetlerinden faydalanırız.--> 
             </div>
             <br />
             <div>
