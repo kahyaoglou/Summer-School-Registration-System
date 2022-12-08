@@ -12,7 +12,7 @@ namespace Data_Access_Layer
 {
     public class DalDers
     {
-        public static List<EntityOgrenci> DersListesi()
+        public static List<EntityDers> DersListesi()
         {
             //Entity öğrenci clasının içerisindeki değerler neyse, listin o değerleri almasını istiyoruz.
             List<EntityDers> degerler = new List<EntityDers>();
