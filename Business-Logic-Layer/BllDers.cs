@@ -9,11 +9,20 @@ using EntityLayer;
 
 namespace Business_Logic_Layer
 {
-    class BllDers
+    public class BllDers
     {
         public static List<EntityDers> BllListele()
         {
             return DalDers.DersListesi();
+        }
+
+        public static int BllTalepEkle(EntityBasvuruForm p)
+        {
+            if(p.BasvuruOgrenciId != null && p.BasvuruDersId != null)
+            {
+                return DalDers.talepEkle(p);
+            }
+            return -1;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Data_Access_Layer
             while (dr.Read()) //dr nesnesinin içeriğini okudukça...
             {
                 EntityDers ent = new EntityDers();
-                ent.Id = Convert.ToInt32(dr["ogrID"].ToString());
+                ent.Id = Convert.ToInt32(dr["dersID"].ToString());
                 ent.DersAd = dr["dersAd"].ToString();
                 ent.Min = int.Parse( dr["dersMinKontenjant"].ToString() );
                 ent.Max = int.Parse( dr["dersMaxKontenjant"].ToString() );
@@ -36,6 +36,18 @@ namespace Data_Access_Layer
             }
             dr.Close();
             return degerler;
+        }
+
+        public static int talepEkle(EntityBasvuruForm parametre)
+        {
+            SqlCommand komut = new SqlCommand("INSERT into tbl_BasvuruFormu (ogrID, dersID) values (@p1,@p2)", Baglanti.baglanti);
+            komut.Parameters.AddWithValue("@p1", parametre.BasvuruOgrenciId);
+            komut.Parameters.AddWithValue("@p2", parametre.BasvuruDersId);
+            if (komut.Connection.State != ConnectionState.Open) //Connection state üzerinden bağlantı kurulmamışsa;
+            {
+                komut.Connection.Open(); //Bağlantımı aç.
+            }
+            return komut.ExecuteNonQuery();
         }
     }
 }

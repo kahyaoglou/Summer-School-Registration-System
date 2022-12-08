@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    class EntityBasvuruForm
+    public class EntityBasvuruForm
     {
         private int basvuruId;
         private int basvuruDersId;
